@@ -11,8 +11,6 @@ import (
 )
 
 type Index struct {
-	Title string
-	Body  []byte
 	Time string
 }
 
