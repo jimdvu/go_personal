@@ -16,11 +16,15 @@ type Index struct {
 	Time string
 }
 
-var templates = template.Must(template.ParseFiles())
 
 
 func main() {
+
+
 	index := Index{time.Now().Format(time.Stamp)}
+
+	var templates = template.Must(template.ParseFiles("index.html"))
+
 
 	log.Fatal(http.ListenAndServe("", nil))
 }
