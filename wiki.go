@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-type Landing struct {
+type index struct {
 	Time string
 }
 
@@ -21,7 +21,7 @@ func main() {
 
 	index := Index{time.Now().Format(time.Stamp)}
 
- 	templates = template.Must(template.ParseFiles("landing.html"))
+ 	templates = template.Must(template.ParseFiles("index.html"))
 
 
 
