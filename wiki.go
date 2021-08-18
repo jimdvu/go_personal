@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -8,7 +9,6 @@ import (
   "regexp"
   "errors"
 	"time"
-	"fmt"
 )
 
 type Index struct {
@@ -21,7 +21,7 @@ type Index struct {
 func main() {
 
 
-	index := Index{"Jimmy", time.Now().Format(time.Stamp)}
+	index := Index{"Jimmy", time.Now().Format("15:04:05")}
  	templates = template.Must(template.ParseFiles("index.html"))
 
 
