@@ -8,6 +8,7 @@ import (
   "regexp"
   "errors"
 	"time"
+	"fmt"
 )
 
 type Index struct {
