@@ -22,7 +22,7 @@ func main() {
 
 
 	index := Index{"Jimmy", time.Now().Format(time.Stamp)}
- 	templates = template.Must(template.ParseFiles("templates/index.html"))
+ 	templates = template.Must(template.ParseFiles("index.html"))
 
 
 
