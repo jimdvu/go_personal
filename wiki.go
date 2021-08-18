@@ -10,7 +10,8 @@ import (
 	"time"
 )
 
-type index struct {
+type Index struct {
+	Name string
 	Time string
 }
 
@@ -19,10 +20,8 @@ type index struct {
 func main() {
 
 
-	index := Index{time.Now().Format(time.Stamp)}
-
+	index := Index{"Jimmy", time.Now().Format(time.Stamp)}
  	templates = template.Must(template.ParseFiles("index.html"))
-
 
 
 
