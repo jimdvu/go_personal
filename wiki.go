@@ -21,7 +21,7 @@ type Index struct {
 func main() {
 
 
-	index := Index{"Jimmy", time.Now().Format("15:04:05")}
+	index := Index{"Jimmy", time.Now()}
  	templates = template.Must(template.ParseFiles("index.html"))
 	fmt.Println("Listening");
 	fmt.Println(time.Now());
@@ -42,11 +42,11 @@ func main() {
 
 		 //Takes the name from the URL query e.g ?name=Martin, will set welcome.Name = Martin.
 		 if name := r.FormValue("name"); name != "" {
-				welcome.Name = name;
+				index.Name = name;
 		 }
 		 //If errors show an internal server error message
 		 //I also pass the welcome struct to the welcome-template.html file.
-		 if err := templates.ExecuteTemplate(w, "welcome-template.html", welcome); err != nil {
+		 if err := templates.ExecuteTemplate(w, "index.html", welcome); err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 		 }
 	})
