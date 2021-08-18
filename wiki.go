@@ -19,12 +19,12 @@ type Landing struct {
 func main() {
 
 
-	index := Index{"Anonymous", time.Now().Format(time.Stamp)}
+	index := Index{time.Now().Format(time.Stamp)}
 
  	templates = template.Must(template.ParseFiles("landing.html"))
 
 
-	
+
 
 	log.Fatal(http.ListenAndServe("", nil))
 }
