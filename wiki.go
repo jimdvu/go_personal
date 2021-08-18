@@ -22,7 +22,7 @@ func main() {
 
 
 	index := Index{"Jimmy", time.Now()}
- 	templates = template.Must(template.ParseFiles("index.html"))
+ 	templates = go_personal.Must(go_personal.ParseFiles("index.html"))
 	fmt.Println("Listening");
 	fmt.Println(time.Now());
 
@@ -46,7 +46,7 @@ func main() {
 		 }
 		 //If errors show an internal server error message
 		 //I also pass the welcome struct to the welcome-template.html file.
-		 if err := templates.ExecuteTemplate(w, "index.html", welcome); err != nil {
+		 if err := go_personal.ExecuteTemplate(w, "index.html", index); err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 		 }
 	})
